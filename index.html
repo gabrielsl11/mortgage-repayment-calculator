@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Mortgage Repayment Calculator</title>
+</head>
+
+<body>
+    <main>
+        <section class="calculator">
+            <div class="sheader">
+                <h1>Mortgage Calculator</h1>
+
+                <p id="clear">Clear All</p>
+            </div>
+
+            <form class="smain">
+                <label for="amount">
+                    <p>Mortgage Amount</p>
+
+                    <div class="input1">
+                        <p class="sideAmount">$</p>
+
+                        <input type="number" id="amount" required>
+                    </div>
+
+                    <p class="requiredAmount" style="display: none; color: rgb(215, 51, 40);">This field is required</p>
+                </label>
+
+                <div class="half">
+                    <label for="term">
+                        <p>Mortgage Term</p>
+
+                        <div class="input2">
+                            <input type="number" id="term" required>
+
+                            <p class="sideTerm">years</p>
+                        </div>
+
+                    <p class="requiredTerm" style="display: none; color: rgb(215, 51, 40);">This field is required</p>
+                    </label>
+                    <label for="rate">
+                        <p>Interest Rate</p>
+
+                        <div class="input2 input3">
+                            <input type="number" id="rate" required>
+
+                            <p class="sideRate">%</p>
+                        </div>
+
+                    <p class="requiredRate" style="display: none; color: rgb(215, 51, 40);">This field is required</p>
+                    </label>
+                </div>
+
+                <label class="type">
+                    <p>Mortgage Type</p>
+
+                    <input type="radio" id="repayment" value="repayment" name="type" required>
+                    <label for="repayment">
+                        <div class="radio">
+                            <div class="checked"></div>
+                        </div>
+                        <p>Repayment</p>
+                    </label>
+
+                    <input type="radio" id="interestOnly" value="interestOnly" name="type" required>
+                    <label for="interestOnly">
+                        <div class="radio">
+                            <div class="checked"></div>
+                        </div>
+                        <p>Interest Only</p>
+                    </label>
+
+                    <p class="requiredType" style="display: none; color: rgb(215, 51, 40);">This field is required</p>
+                </label>
+
+                <label class="button-label">
+                    <button class="button" name="submit">
+                        <i class="bi bi-calculator-fill"></i>
+                        <span>Calculate Repayments</span>
+                    </button>
+                </label>
+            </form>
+        </section>
+
+        <section class="result">
+            <div class="empty" style="display: flex;">
+                <img src="assets/img/empty.svg" alt="Empty">
+                <h1>Results shown here</h1>
+                <p>Complete the form and click "calculate repayments" to see what your monthly repayments should be.</p>
+            </div>
+
+            <div class="full" style="display: none;">
+                <h1>Your results</h1>
+
+                <p>Your results are shown below based on the information you provided. To adjust the results, edit the
+                    form and click "calculate repayments again.</p>
+
+                <div class="rbox">
+                    <div>
+                        <p>Your monthly repayments</p>
+
+                        <h1 class="monthlyRepayments">$1,797.74</h1>
+                    </div>
+
+                    <div>
+                        <p>Total you'll repay over the term</p>
+
+                        <h1 class="totalRepayments">$539,322.94</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+    <script>
+        var button = document.querySelector('.button');
+
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            // window.alert('test');
+        });
+    </script>
+</body>
+
+</html>
